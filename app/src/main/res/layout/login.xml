@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="loginViewModel"
+            type="com.fictivestudios.demoarcitectureapp.ui.fragment.login.LoginViewModel" />
+
+    </data>
+
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/loginScreen"
+            >
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:hint="Email hint"
+                        android:text="@={loginViewModel.email}"
+                        android:paddingStart="@dimen/_15sdp"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </androidx.appcompat.widget.AppCompatEditText>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:hint="Password"
+                        android:textColor="#000"
+                        android:text="@={loginViewModel.password}"
+                        android:inputType="textPassword"
+                        android:paddingLeft="@dimen/_15sdp"
+                        android:textSize="@dimen/_15sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/email" />
+
+
+            <ImageView
+                android:id="@+id/siginpasssow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/visibility"
+                app:layout_constraintTop_toTopOf="@id/password"
+                android:layout_marginRight="@dimen/_5sdp"
+                app:layout_constraintRight_toRightOf="@id/password"
+                android:layout_marginTop="@dimen/_10sdp"
+                ></ImageView>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/loginButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:text="Login"
+                        android:textColor="@color/black"
+                        android:onClick="@{() -> loginViewModel.validation()}"
+                        app:layout_constraintTop_toBottomOf="@id/password"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                    />
+
+            <TextView
+                android:id="@+id/unametxt"
+                app:layout_constraintTop_toBottomOf="@id/loginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_margin="10dp"
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:text="Username : kminchelle"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/ptxt"
+                app:layout_constraintTop_toBottomOf="@id/unametxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_margin="10dp"
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:text="Password : 0lelplR"
+                ></TextView>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

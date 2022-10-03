@@ -1,0 +1,31 @@
+package com.fictivestudios.demoarcitectureapp.data.model.response.user
+
+data class User(
+    var address: Address?,
+    var age: Int?,
+    var bank: Bank?,
+    var birthDate: String?,
+    var bloodGroup: String?,
+    var company: Company?,
+    var domain: String?,
+    var ein: String?,
+    var email: String?,
+    var eyeColor: String?,
+    var firstName: String?,
+    var gender: String?,
+    var hair: Hair?,
+    var height: Int?,
+    var id: Int?,
+    var image: String?,
+    var ip: String?,
+    var lastName: String?,
+    var macAddress: String?,
+    var maidenName: String?,
+    var password: String?,
+    var phone: String?,
+    var ssn: String?,
+    var university: String?,
+    var userAgent: String?,
+    var username: String?,
+    var weight: Double?
+)
